@@ -7,9 +7,16 @@ async function createProdutoService(novoProduto) {
         throw new Error("Erro ao criar novo produto!");
     }
 
-    return produtoRepository;
+    return produtoSalvo;
+}
+
+async function readAllProdutoService() {
+    const produtos = await produtoRepository.readAllProdutoRepository();
+    
+    return produtos;
 }
 
 export default {
-    createProdutoService
+    createProdutoService,
+    readAllProdutoService
 }
